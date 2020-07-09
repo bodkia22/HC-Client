@@ -1,0 +1,27 @@
+@import '../../assets/scss/vars.scss';
+
+.header{
+    display: flex;
+    background-color: $light;
+    padding: 1rem;
+    justify-content: space-between;
+    
+}
+
+.user-name{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: .5rem;
+    align-items: center;
+}
+
+.logo{
+
+}
+
+h2, h3{
+    padding: 0;
+    margin: 0;
+}
+
+
