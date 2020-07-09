@@ -50,11 +50,11 @@ export const App = () => {
             <Route path="/password/forgot" component={() => !user.role ? <ForgotPasswordPage /> : (user.role === "student" ? <Redirect to="/courses"/> : <Redirect to="/admin" />)}/>
             <Route path="/password/recover/:userId/:token" component={() => !user.role ? <RecoverPasswordPage /> : (user.role === "student" ? <Redirect to="/courses"/> : <Redirect to="/admin" />)}/>
             <Route path="/register" component={RegisterPage} />
-            <Route path="/courses" component={() => !user.role ? <Redirect to="/login"/> : (user.role === "admin" ? <Redirect to="/"/> : <CoursesPage/>)} />
+            <Route path="/courses" component={() => !user.role ? <Redirect to="/login"/> : (user.role === "admin" ? <Redirect to="/admin"/> : <CoursesPage/>)} />
             <Route path="/admin" component={() => !user.role ? <Redirect to="/login"/> : (user.role === "student" ? <Redirect to="/"/> : <AdminPage/>)}/>
             <Route path="/confirmation/:userId/:token" component={Confirmation} />
             <Route path="/subscribe/:courseId" component={() => !!user.role ? <SubscribePage/> : <Redirect to="/login"/>}/>
-            <Route path="/profile" component={() => !user.role ? <Redirect to="/login"/> : (user.role === "admin" ? <Redirect to="/"/> : <UserProfilePage/>)} />
+            <Route path="/profile" component={() => !user.role ? <Redirect to="/login"/> : (user.role === "admin" ? <Redirect to="/admin"/> : <UserProfilePage/>)} />
             <Route path='/404' component={PageNotFound} />
             <Redirect from='*' to='/404' /> 
           </Switch>

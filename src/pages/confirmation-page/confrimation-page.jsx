@@ -13,15 +13,6 @@ export const Confirmation = () => {
 
   const { userId, token } = useParams();
 
-  const values = {
-    userId,
-    token,
-  };
-
-  console.log(values);
-
-  
-
   useEffect(() => {
     const confirmEmail = async () => {
       const { status } = await getRequest(
@@ -41,12 +32,11 @@ export const Confirmation = () => {
   }, [userId,token]);
 
   return (
-    <div>
+    <div className="email-confirmation">
       {view && (
         <Result
           status={resStatus.status}
           title={resStatus.title}
-          subTitle="Order number: 2017182818828182881 Cloud server configuration takes 1-5 minutes, please wait."
           extra={[
             <Link to="/login">
               <Button type="primary">Start learning !</Button>

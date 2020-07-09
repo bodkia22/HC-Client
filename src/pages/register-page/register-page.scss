@@ -1,6 +1,10 @@
-.container{
+.register-container{
     display: grid;
     justify-content: center;
     align-items: center;
-    height:100vh; 
+    padding: 4rem 2rem;
+    background-image: url("../../assets/images/stud.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: calc(100vh - 65.8px);
 }

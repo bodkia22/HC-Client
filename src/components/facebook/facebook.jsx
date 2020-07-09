@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 
 import './facebook.scss';
 
-import { createFromIconfontCN } from '@ant-design/icons';
+import { createFromIconfontCN, GoogleSquareFilled, GoogleCircleFilled, LinkedinFilled } from '@ant-design/icons';
 
 const IconFont = createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
@@ -49,7 +49,7 @@ export const Facebook = () => {
         onClick={componentClicked}
         callback={responseFacebook}
         render={renderProps => (
-          <div>Use social media <IconFont type="icon-facebook" onClick={renderProps.onClick} className="facebookIcon"/> <IconFont type="icon-twitter" /></div>
+          <div>Use social media <IconFont type="icon-facebook" onClick={renderProps.onClick} className="facebookIcon"/> <IconFont type="icon-twitter" /> <GoogleCircleFilled /> <LinkedinFilled /></div>
         )}
       />
     </div>

@@ -1,6 +1,10 @@
-.container{
+.login-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    height:100vh; 
+    padding: 4rem 2rem;
+    height: calc(100vh - 65.8px);
+    background-image: url("../../assets/images/students_phone.jpg");
+    background-size: cover;
+    background-position: bottom;
 }

@@ -5,7 +5,7 @@ import './register-page.scss';
 
 export const RegisterPage = () => {
     return (
-        <div className="container">
+        <div className="register-container">
             <RegistrationForm />
         </div>
     )

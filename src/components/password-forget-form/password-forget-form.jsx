@@ -33,11 +33,13 @@ export const PasswordForgetForm = () => {
   return (
     <Spin spinning={spinning}>
       {isFinished ? (
+        <div className="forget-result">
         <Result
         status="success"
         title="A link for renewing your password was sent to your e-mail address."
         subTitle="If the e-mail is not in your inbox, please check your junk mail or spam folders."
       />
+      </div>
       ) : (
         <div className="password-forget">
           <p className="forget-text">

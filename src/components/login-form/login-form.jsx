@@ -71,6 +71,7 @@ export const LoginForm = () => {
         onFinish={onFinish}
         form={form}
       >
+        <h1>Sign In</h1>
         <Item
           name="username"
           rules={[
@@ -109,10 +110,10 @@ export const LoginForm = () => {
 
         <Item>
           <Button type="primary" htmlType="submit" className="login-form-button">
-            Log in 
+            Let's Go
           </Button>
           <Facebook/>
-          Or <Link to="/register">register now!</Link> 
+          Or <Link to="/register">sign up now!</Link> 
         </Item>
       </Form>
       </Spin>

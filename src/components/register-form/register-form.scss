@@ -1,6 +1,18 @@
 .register-form{
-    min-width: 600px;
+    // min-width: 600px;
+    // margin-top: 1rem;
+    // margin-left: 10rem;
+    width: 440px;
+
+    background-color: rgba(#ffffff, .8);
+    padding: 2rem;
+    min-height: 100%;
 }
 .item{
     width: 100%;
+}
+
+.register-respounce{
+    background-color: rgba(#ffffff, .8);
+    padding: 2rem 4rem;
 }

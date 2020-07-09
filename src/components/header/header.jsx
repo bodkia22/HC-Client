@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../../store/actions/user.actions";
 import { Link } from "react-router-dom";
 import { UserOutlined } from "@ant-design/icons";
+import logo from "../../assets/images/honeycomb.png";
 
 export const Header = ({ user }) => {
   const dispatch = useDispatch();
@@ -18,14 +19,16 @@ export const Header = ({ user }) => {
 
   return (
     <div className="header">
-      <Link to="/courses">
-        <h2 className="logo">HoneyCourse</h2>
+      <Link to="/courses" className="logo">
+        <img src={logo} alt="comb" className="logo-img"/>
+        <h2 className="logo-text">HoneyCourses</h2>
       </Link>
       {user.role && 
         <div className="user-name">
+          <Link to="/profile" ><h3 className="user-nickName">{user.nickName}</h3></Link>
           {user.role === "student" ? (
             <Avatar
-              style={{ backgroundColor: "#2f4f4f" }}
+              style={{ backgroundColor: "#d9d9d9", width:"1.75rem", height: "1.75rem" }}
               icon={<UserOutlined />}
             />
           ) : (
@@ -33,17 +36,16 @@ export const Header = ({ user }) => {
               Admin
             </Avatar>
           )}
-          <Link to="/profile" ><h3 className="user-nickName">{user.nickName}</h3></Link>
         </div>
       }
 
       {user.role ? (
         <Button type="primary" danger onClick={logout}>
-          Logout
+          Sign Out
         </Button>
       ) : (
         <Link to="/login">
-          <Button type="primary">Login</Button>
+          <Button type="primary">Sign In</Button>
         </Link>
       )}
     </div>

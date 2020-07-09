@@ -1,18 +1,21 @@
-import React from 'react'
-import { Card, Button } from 'antd'
+import React from "react";
+import { Card, Button } from "antd";
 
-import './course-card.scss';
-import { Link } from 'react-router-dom';
+import "./course-card.scss";
+import { Link } from "react-router-dom";
 
-export const CourseCard =  ({ id, name, info, imgUrl }) => {
+export const CourseCard = ({ id, name, info, imgUrl }) => {
+  const link = "/subscribe/" + id;
 
-    const link = "/subscribe/"+id;
-    
-    return (
-        <Card title={name}> 
-            <img src={imgUrl} alt="courseImage" className="imgContainer"/>
-            <p>{info}</p>
-            <Link to={link} ><Button type="primary">Pick date</Button></Link>
-        </Card>
-    )
-}
+  return (
+    <Card title={name}>
+      <div className="imgContainer">
+        <img src={imgUrl} alt="courseImage"  class="img"/>
+      </div>
+      <p className="info">{info.slice(0, 320)}...</p>
+      <Link to={link}>
+        <Button type="primary">See More</Button>
+      </Link>
+    </Card>
+  );
+};

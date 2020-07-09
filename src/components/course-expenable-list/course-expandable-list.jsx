@@ -33,7 +33,6 @@ export const CourseExpandableList = ({email}) => {
             <div>
                 { courses[0].id ? courses.map(course => <ExpendableCourseCard className="card" key={course.id} {...course}/>) : <p>This user has not subscribed to any courses</p>}
             </div>
-            
         </Spin>
     )
 }

@@ -8,7 +8,7 @@ import { AlertOutlined } from "@ant-design/icons";
 
 export const SubscribeCard = ({ id, name, info, imgUrl }) => {
   const [courseDate, setCourseDate] = useState();
-  const [spinner, setSpinner] = useState(false);
+  const [spinner, setSpinner] = useState(true);
   const [isSubscribed, setIsSubscribed] = useState(false);
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export const SubscribeCard = ({ id, name, info, imgUrl }) => {
   };
   return (
     <Card title={name} className="subscribe-card" spinning={spinner}>
-      <img src={imgUrl} alt="courseImage" className="imgContainer" />
+      <img src={imgUrl} alt="courseImage" className="imgsubscribe" />
       <p>{info}</p>
       <div className="content">
         <h3>How the Specialization Works</h3>
@@ -104,7 +104,7 @@ export const SubscribeCard = ({ id, name, info, imgUrl }) => {
       ) : (
         <div className="subscribe-block">
           <h3>
-            <AlertOutlined className="logo-succsess"/> You have successfully registered for this course, you can see the start date in your <Link to="/profile" >profile</Link>. 
+            <AlertOutlined className="logo-succsess"/> You've already registered for the course, you can see the start date in the <Link to="/profile" >profile</Link>. 
           </h3>
         </div>
       )}

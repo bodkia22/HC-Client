@@ -2,7 +2,7 @@ h4{
     font-family: 'Sriracha', cursive;
 }
 .subscribe-card{
-    width: 90rem;
+    width: 740px;
     margin: 0 auto;
     margin-top: 1rem;
     .subscribe-block{  
@@ -17,5 +17,14 @@ h4{
 
     .logo-succsess{
         color:#40a9ff;
+    }
+
+    .imgsubscribe{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    p{
+        line-height: 1.1;
     }
 }

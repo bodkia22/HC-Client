@@ -16,7 +16,7 @@ export const UsersTable = () => {
 
   const [pagination, setPagination] = useState({
     current: 1,
-    pageSize: 2
+    pageSize: 5
   });
   const [sorter, setSorter] = useState({order:"",field:""});
 

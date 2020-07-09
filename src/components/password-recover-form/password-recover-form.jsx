@@ -25,8 +25,14 @@ export const PasswordRecoverForm = () => {
       setIsFinished(true);
       console.log(data);
     }
-    if (status === 500) {
-      console.log(data);
+    else{
+      form.setFields([
+        {
+          name: "password",
+          value: values.password,
+          errors: ["Oups. Something went wrong! Try another link later."],
+        },
+      ]);
     }
     setSpinning(false);
   };
@@ -34,7 +40,7 @@ export const PasswordRecoverForm = () => {
   return (
     <Spin spinning={spinning}>
       {isFinished ? (
-        <div className="password-recover">
+        <div className="result-recover">
           <Result
             status="success"
             title="Password was changed"
@@ -65,13 +71,21 @@ export const PasswordRecoverForm = () => {
                 ({ passwordValidator }) => ({
                   validator(rule, value) {
                     if (value == null) return Promise.resolve();
-                    if (value.length >= 8 && value.length <= 50) {
+                    if (value.length >= 8) {
                       return Promise.resolve();
                     }
-
-                    return Promise.reject(
-                      "Must be at least 8 symbol but less than 50"
-                    );
+    
+                    return Promise.reject("Must be at least 8 symbols");
+                  },
+                }),
+                ({ passwordValidator }) => ({
+                  validator(rule, value) {
+                    if (value == null) return Promise.resolve();
+                    if (value.length < 128) {
+                      return Promise.resolve();
+                    }
+    
+                    return Promise.reject("Password is too long");
                   },
                 }),
               ]}

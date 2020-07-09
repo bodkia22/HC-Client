@@ -1,11 +1,12 @@
 @import '../../assets/scss/vars.scss';
 
 .header{
-    display: flex;
-    background-color: $light;
+    display: grid;
+    //background-color: $light;
     padding: 1rem;
-    justify-content: space-between;
-    
+    grid-template-columns: 1fr auto auto;
+    grid-gap: 1rem;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .user-name{
@@ -13,10 +14,31 @@
     grid-template-columns: auto 1fr;
     grid-gap: .5rem;
     align-items: center;
+
+    .ant-avatar{
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .user-nickName{
+        font-size: .9rem;
+        color: #606060;
+    }
+}
+.logo-text{
+    font-family: 'Modak', cursive;
+    font-weight: 400;
 }
 
 .logo{
+    display: grid;
+    grid-gap: .5rem;
+    grid-template-columns: 1.75rem 1fr;
+    align-items: center;
+}
 
+.logo-img{
+    width: 100%;
 }
 
 h2, h3{
